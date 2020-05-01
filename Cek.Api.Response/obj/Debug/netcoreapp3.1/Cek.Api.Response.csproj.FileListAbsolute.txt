@@ -1,0 +1,17 @@
+D:\Developments\ASP.NET\Clickset\Projects\ApiResponseLibrary\Cek.Api.Response\Cek.Api.Response\bin\Debug\netcoreapp3.1\Cek.Api.Response.deps.json
+D:\Developments\ASP.NET\Clickset\Projects\ApiResponseLibrary\Cek.Api.Response\Cek.Api.Response\bin\Debug\netcoreapp3.1\Cek.Api.Response.dll
+D:\Developments\ASP.NET\Clickset\Projects\ApiResponseLibrary\Cek.Api.Response\Cek.Api.Response\bin\Debug\netcoreapp3.1\Cek.Api.Response.pdb
+D:\Developments\ASP.NET\Clickset\Projects\ApiResponseLibrary\Cek.Api.Response\Cek.Api.Response\obj\Debug\netcoreapp3.1\Cek.Api.Response.csproj.CoreCompileInputs.cache
+D:\Developments\ASP.NET\Clickset\Projects\ApiResponseLibrary\Cek.Api.Response\Cek.Api.Response\obj\Debug\netcoreapp3.1\Cek.Api.Response.AssemblyInfoInputs.cache
+D:\Developments\ASP.NET\Clickset\Projects\ApiResponseLibrary\Cek.Api.Response\Cek.Api.Response\obj\Debug\netcoreapp3.1\Cek.Api.Response.AssemblyInfo.cs
+D:\Developments\ASP.NET\Clickset\Projects\ApiResponseLibrary\Cek.Api.Response\Cek.Api.Response\obj\Debug\netcoreapp3.1\Cek.Api.Response.dll
+D:\Developments\ASP.NET\Clickset\Projects\ApiResponseLibrary\Cek.Api.Response\Cek.Api.Response\obj\Debug\netcoreapp3.1\Cek.Api.Response.pdb
+C:\Users\cek\Desktop\ApiResponseLibrary\Cek.Api.Response\Cek.Api.Response\bin\Debug\netcoreapp3.1\Cek.Api.Response.deps.json
+C:\Users\cek\Desktop\ApiResponseLibrary\Cek.Api.Response\Cek.Api.Response\bin\Debug\netcoreapp3.1\Cek.Api.Response.dll
+C:\Users\cek\Desktop\ApiResponseLibrary\Cek.Api.Response\Cek.Api.Response\bin\Debug\netcoreapp3.1\Cek.Api.Response.pdb
+C:\Users\cek\Desktop\ApiResponseLibrary\Cek.Api.Response\Cek.Api.Response\obj\Debug\netcoreapp3.1\Cek.Api.Response.csprojAssemblyReference.cache
+C:\Users\cek\Desktop\ApiResponseLibrary\Cek.Api.Response\Cek.Api.Response\obj\Debug\netcoreapp3.1\Cek.Api.Response.csproj.CoreCompileInputs.cache
+C:\Users\cek\Desktop\ApiResponseLibrary\Cek.Api.Response\Cek.Api.Response\obj\Debug\netcoreapp3.1\Cek.Api.Response.AssemblyInfoInputs.cache
+C:\Users\cek\Desktop\ApiResponseLibrary\Cek.Api.Response\Cek.Api.Response\obj\Debug\netcoreapp3.1\Cek.Api.Response.AssemblyInfo.cs
+C:\Users\cek\Desktop\ApiResponseLibrary\Cek.Api.Response\Cek.Api.Response\obj\Debug\netcoreapp3.1\Cek.Api.Response.dll
+C:\Users\cek\Desktop\ApiResponseLibrary\Cek.Api.Response\Cek.Api.Response\obj\Debug\netcoreapp3.1\Cek.Api.Response.pdb
