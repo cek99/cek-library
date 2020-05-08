@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cek\\Desktop\\ApiResponseLibrary\\Cek.Api.Response\\Cek.Api.Response\\Cek.Api.Response.csproj": {}
+    "D:\\Developments\\ASP.NET\\Clickset\\Projects\\cek-library\\Cek.Api.Response\\Cek.Api.Response.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cek\\Desktop\\ApiResponseLibrary\\Cek.Api.Response\\Cek.Api.Response\\Cek.Api.Response.csproj": {
-      "version": "1.1.0",
+    "D:\\Developments\\ASP.NET\\Clickset\\Projects\\cek-library\\Cek.Api.Response\\Cek.Api.Response.csproj": {
+      "version": "2.0.1",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cek\\Desktop\\ApiResponseLibrary\\Cek.Api.Response\\Cek.Api.Response\\Cek.Api.Response.csproj",
+        "projectUniqueName": "D:\\Developments\\ASP.NET\\Clickset\\Projects\\cek-library\\Cek.Api.Response\\Cek.Api.Response.csproj",
         "projectName": "Cek.Api.Response",
-        "projectPath": "C:\\Users\\cek\\Desktop\\ApiResponseLibrary\\Cek.Api.Response\\Cek.Api.Response\\Cek.Api.Response.csproj",
+        "projectPath": "D:\\Developments\\ASP.NET\\Clickset\\Projects\\cek-library\\Cek.Api.Response\\Cek.Api.Response.csproj",
         "packagesPath": "C:\\Users\\cek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cek\\Desktop\\ApiResponseLibrary\\Cek.Api.Response\\Cek.Api.Response\\obj\\",
+        "outputPath": "D:\\Developments\\ASP.NET\\Clickset\\Projects\\cek-library\\Cek.Api.Response\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cek\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,6 +41,10 @@
             "Microsoft.AspNet.WebApi.Core": {
               "target": "Package",
               "version": "[5.2.7, )"
+            },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             }
           },
           "imports": [

@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Http.ModelBinding;
 
 namespace Cek.Api.Response
 {
-        public class ResponseDetail
+    public class ResponseDetail
         {
             //Error response details for bad requests 
             public const string BadRequestCode = "400";
@@ -74,23 +73,95 @@ namespace Cek.Api.Response
         }
         public class ResponseHandler
         {
-            public static Response<T> Get<T>(string type, string detail = null, T response = null, Dictionary<string, string> errors = null)
-             where T : class, new()
-            {
-                var apiResponse = new Response<T>();
-                    apiResponse.Data = response;
-                    apiResponse.Status = new ResponseStatus() { Message = detail != null ? detail : GetResponseMessage(type), Errors = errors };
-                return apiResponse;
-            }
-            public static ResponseList<T> GetList<T>(string type, string detail = null, List<T> response = null, Dictionary<string, string> errors = null)
-               where T : class, new()
-            {
+        #region Single
+
+        public static Response<T> Get<T>(T response = null, string message = null)
+                     where T : class, new()
+        {
+            var apiResponse = new Response<T>();
+            apiResponse.Data = response;
+            apiResponse.Status = new ResponseStatus() { Message = message, Errors = null };
+            return apiResponse;
+        }
+        public static Response<T> Get<T>(Dictionary<string, string> errors = null, string message = null)
+                     where T : class, new()
+        {
+            var apiResponse = new Response<T>();
+            apiResponse.Data = null;
+            apiResponse.Status = new ResponseStatus() { Message = message, Errors = errors };
+            return apiResponse;
+        }
+        public static Response<T> Get<T>(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary modelState = null, string message = null)
+                     where T : class, new()
+        {
+            var apiResponse = new Response<T>();
+            apiResponse.Data = null;
+            apiResponse.Status = new ResponseStatus() { Message = message, Errors = ValidateModelState(modelState) };
+            return apiResponse;
+        }
+        public static Response<T> Get<T>(ModelStateDictionary modelState = null, string message = null)
+                     where T : class, new()
+        {
+            var apiResponse = new Response<T>();
+            apiResponse.Data = null;
+            apiResponse.Status = new ResponseStatus() { Message = message, Errors = ValidateModelState(modelState) };
+            return apiResponse;
+        }
+        public static Response<T> Get<T>(string message = null)
+                     where T : class, new()
+        {
+            var apiResponse = new Response<T>();
+            apiResponse.Data = null;
+            apiResponse.Status = new ResponseStatus() { Message = message, Errors = null };
+            return apiResponse;
+        }
+        #endregion
+
+        #region Multiple
+        public static ResponseList<T> GetList<T>(List<T> response = null, string message = null)
+                   where T : class, new()
+        {
                 var apiResponse = new ResponseList<T>();
-                    apiResponse.Data = response;
-                    apiResponse.Status = new ResponseStatus() { Message = detail != null ? detail : GetResponseMessage(type), Errors = errors };
+                apiResponse.Data = response;
+                apiResponse.Status = new ResponseStatus() { Message = message, Errors = null };
                 return apiResponse;
-            }
-            public static Dictionary<string, string> ValidateModelState(ModelStateDictionary modelState)
+        }
+
+        public static ResponseList<T> GetList<T>(Dictionary<string, string> errors = null, string message = null)
+                   where T : class, new()
+        {
+            var apiResponse = new ResponseList<T>();
+            apiResponse.Data = null;
+            apiResponse.Status = new ResponseStatus() { Message = message, Errors = errors };
+            return apiResponse;
+        }
+        public static ResponseList<T> GetList<T>(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary modelState = null, string message = null)
+                  where T : class, new()
+        {
+            var apiResponse = new ResponseList<T>();
+            apiResponse.Data = null;
+            apiResponse.Status = new ResponseStatus() { Message = message, Errors = ValidateModelState(modelState) };
+            return apiResponse;
+        }
+        public static ResponseList<T> GetList<T>(ModelStateDictionary modelState = null, string message = null)
+                  where T : class, new()
+        {
+            var apiResponse = new ResponseList<T>();
+            apiResponse.Data = null;
+            apiResponse.Status = new ResponseStatus() { Message = message, Errors = ValidateModelState(modelState) };
+            return apiResponse;
+        }
+        public static ResponseList<T> GetList<T>(string message = null)
+                   where T : class, new()
+        {
+            var apiResponse = new ResponseList<T>();
+            apiResponse.Data = null;
+            apiResponse.Status = new ResponseStatus() { Message = message, Errors = null };
+            return apiResponse;
+        }
+        #endregion
+
+        private static Dictionary<string, string> ValidateModelState(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary modelState)
             {
                 Dictionary<string, string> defaultErrors = new Dictionary<string, string>();
                 foreach (var state in modelState)
@@ -104,29 +175,45 @@ namespace Cek.Api.Response
                     }
                 }
                 return defaultErrors;
-         }
-            private static string GetResponseMessage(string type)
-             {
-                    string message = string.Empty;
-                    switch (type)
+            }
+
+            private static Dictionary<string, string> ValidateModelState(ModelStateDictionary modelState)
+            {
+                Dictionary<string, string> defaultErrors = new Dictionary<string, string>();
+                foreach (var state in modelState)
+                {
+                    foreach (var error in state.Value.Errors)
                     {
-                        case ResposnseType.BadRequest:
-                            message = ResponseDetail.BadRequestMessage;
-                            break;
-                        case ResposnseType.ServerError:
-                            message = ResponseDetail.InternalServerErrorMessage;
-                            break;
-                        case ResposnseType.Success:
-                            message = ResponseDetail.SuccessMessage;
-                            break;
-                        case ResposnseType.SqlError:
-                            message = ResponseDetail.SqlErrorMessage;
-                            break;
-                        default:
-                            message = ResponseDetail.InternalServerErrorMessage;
-                            break;
+                        if (!defaultErrors.ContainsKey(state.Key))
+                        {
+                            defaultErrors.Add(state.Key, state.Key + ErrorMessages.IsRequired);
+                        }
                     }
-                    return message;
+                }
+                return defaultErrors;
+            }
+            private static string GetResponseMessage(string type)
+            {
+                        string message = string.Empty;
+                        switch (type)
+                        {
+                            case ResposnseType.BadRequest:
+                                message = ResponseDetail.BadRequestMessage;
+                                break;
+                            case ResposnseType.ServerError:
+                                message = ResponseDetail.InternalServerErrorMessage;
+                                break;
+                            case ResposnseType.Success:
+                                message = ResponseDetail.SuccessMessage;
+                                break;
+                            case ResposnseType.SqlError:
+                                message = ResponseDetail.SqlErrorMessage;
+                                break;
+                            default:
+                                message = ResponseDetail.InternalServerErrorMessage;
+                                break;
+                        }
+                        return message;
              }
 
         }
